@@ -15,6 +15,16 @@ create table pets (
 
 );
 
+create table appointments(
+	id integer PRIMARY KEY AUTOINCREMENT,
+	clientID integer,
+	petID integer,
+	apptDate varchar(255),
+	apptTime varchar(255),
+	apptReason varchar(255),
+	FOREIGN KEY (clientID) REFERENCES clients(id)
+	FOREIGN KEY (petID) REFERENCES pets(id)
+);
 
 create table users (
 	id integer PRIMARY KEY AUTOINCREMENT,

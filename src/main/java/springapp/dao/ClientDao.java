@@ -40,6 +40,7 @@ public class ClientDao {
     JdbcTemplate jdbcTemplate;
     	
 	public List<Client> list(){
+		logger.info("Inside Client List method");
 		List<Client> queryResult = jdbcTemplate.query("SELECT id, name, phone_number, address FROM clients",
 				simpleMapper);
 		
