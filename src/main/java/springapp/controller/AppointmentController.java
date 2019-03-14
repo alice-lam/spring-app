@@ -35,13 +35,13 @@ public class AppointmentController {
 	
     private Logger logger = LoggerFactory.getLogger(AppointmentController.class);
    
-    @GetMapping
+    //@GetMapping
     public String appointments() {
       return "appointments/appointments";
     }
     
     @PreAuthorize("hasAuthority('LIST_CLIENTS')")
-	//@GetMapping
+	@GetMapping
 	public String listAppointments(Model model) {
     	logger.info("Inside Appointment Controller listAppointments");
     	List<Appointment> appointments = appointmentService.getAppointments();

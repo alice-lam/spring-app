@@ -82,9 +82,11 @@ public class PetController {
         // if a client id wass passed in, then we got to this page from the client edit page.
         // other wise we got here from the list pets page
         // this information can be used to figure out what page we should exit to
+		List<Client> clients = clientService.getClients();
+		model.addAttribute("clients", clients);
+		
 		model.addAttribute("fromClientPage", clientId != null);
         model.addAttribute("saved", saved);
-
 
         // if the id passed in is 'new' and no clientId is passed in, then we have a problem ....
 		if(id.equals("new") && clientId == null) {

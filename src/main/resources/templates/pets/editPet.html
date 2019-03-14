@@ -19,7 +19,6 @@
 				<div class="pad">
 					<form class="pure-form pure-form-aligned" id="theForm" action="#" data-th-action="@{/pets}" data-th-object="${command}" method="post">
 						<input type="hidden" data-th-field="*{id}"/>
-						<input type="hidden" data-th-field="*{clientId}"/>
 						<input type="hidden" id="fromClientPage" name="fromClientPage" data-th-value="${fromClientPage}"/>
 						
 					    <div data-th-if="${saved}" class="message-box-info">
@@ -51,11 +50,19 @@
 							</select>
 				        </div>
 						
-						
 				        <div class="pure-control-group">
 				            <label for="altered">Altered</label>
 				            <input id="altered" name="altered" type="checkbox" data-th-field="*{altered}">
+						</div>
+						
+
+						<div class="pure-control-group">
+				            <label>Change Ownership</label>
+							<select data-th-field="*{clientId}">
+							    <option data-th-each="client : ${clients}" data-th-value="${client.id}" data-th-text="${client.name}"></option>
+							</select>
 				        </div>
+						
 				        
 					</form>
 					

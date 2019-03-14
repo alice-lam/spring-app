@@ -20,7 +20,15 @@
 						<th>Reason for Visit</th>
 					</tr>
 				</thead>
-				<tbody>	
+				<tbody>
+						<tr data-th-each="appointment : ${appointments}">
+							<td data-th-text="${appointment.id}">...</td>
+							<td data-th-text="${appointment.clientID}">...</td>
+							<td data-th-text="${appointment.petID}">...</td>
+							<td data-th-text="${appointment.Date}">...</td>
+							<td data-th-text="${appointment.Time}">...</td>
+							<td data-th-text="${appointment.VisitReason}">...</td>
+						</tr>	
 				</tbody>
 			</table>
 

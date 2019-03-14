@@ -36,14 +36,19 @@
 				        <div class="pure-control-group">
 				            <label for="phone">Phone</label>
 				            <input id="phone" name="phone" type="text" data-th-field="*{phoneNumber}">
-				        </div>
-						
+						</div>
 						
 				        <div class="pure-control-group">
 				            <label for="address">Address</label>
 				            <textarea id="address" name="address" type="text" data-th-field="*{address}">
 				            </textarea>
-				        </div>
+						</div>
+						
+						<div class="pure-control-group">
+							<label for="email">Email</label>
+							<textarea id="email" name="address" type="text" data-th-field="*{email}"></textarea>
+						</div>
+						
 				        <div class="pure-control-group" data-th-if="${command.id != null}">
 							<div data-th-if="${deleted}" class="message-box-info">
 								Deleted successfully
